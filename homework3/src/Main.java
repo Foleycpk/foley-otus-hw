@@ -28,8 +28,14 @@ public class Main {
             System.out.println();
 
             System.out.print("Ваш ответ: ");
-            int userSelection = scanner.nextInt();
 
+            while (!scanner.hasNextInt()) {
+                System.out.println("Некорректный ввод: укажите номер варианта ответа");
+                scanner.next();
+                System.out.print("Ваш ответ: ");
+            }
+
+            int userSelection = scanner.nextInt();
             if (userSelection == rightVariant[i]) {
                 System.out.println("Вы ответили правильно" + "\n");
                 counterOfRightAnswers++;
