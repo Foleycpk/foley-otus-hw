@@ -1,26 +1,26 @@
 public class Question {
-    private int number;
     private String text;
-    private AnswerVariants[] answerVariants;
+    private AnswerVariant[] answerVariants = new AnswerVariant[3];
 
-    public Question(int number, String text) {
-        this.number = number;
+    public Question(String text) {
         this.text = text;
     }
-        public void addAnswerVariants(AnswerVariants answerVariant, int numberOfVariant) {
+        public void addAnswerVariants(AnswerVariant answerVariant, int numberOfVariant) {
              answerVariants[numberOfVariant] = answerVariant;
         }
     public static void printQuestion(Question question){
         System.out.println(question.text);
         for (int i = 0; i < question.answerVariants.length; i++) {
-            AnswerVariants.printAnswerVariantFor(question.answerVariants[i]);
+            AnswerVariant.printAnswerVariantFor(question.answerVariants[i]);
         }
         System.out.println();
     }
     public boolean checkRightAnswer(int userAnswer) {
 
         if (answerVariants[userAnswer].rightAnswer) {
-
+            return true;
+        } else {
+            return false;
         }
     }
 
