@@ -23,7 +23,7 @@ public class Test {
         question3.addAnswerVariants(new AnswerVariant("3) Русло", false), 2);
 
         for (Question question : questions) {
-            question.printQuestion(question);
+            Question.printQuestion(question);
 
             int userAnswer = getUserAnswer();
             boolean isRightAnswer = question.checkRightAnswer(userAnswer);

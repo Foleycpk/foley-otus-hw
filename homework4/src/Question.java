@@ -16,12 +16,7 @@ public class Question {
         System.out.println();
     }
     public boolean checkRightAnswer(int userAnswer) {
-
-        if (answerVariants[userAnswer].rightAnswer) {
-            return true;
-        } else {
-            return false;
-        }
+        return answerVariants[userAnswer].rightAnswer;
     }
 
 }
