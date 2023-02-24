@@ -19,7 +19,7 @@ public class Main {
     private static List<Integer> createList() {
         List<Integer> list = new ArrayList<>();
 
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 5000; i++) {
             list.add((int) (Math.random() * 7));
         }
         return list;
