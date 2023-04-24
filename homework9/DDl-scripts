@@ -1,0 +1,34 @@
+create database homework9;
+
+create table questions
+(id serial primary key,
+question_text varchar(100) not null);
+
+create table answers
+(id serial primary  key,
+question_id integer references  questions (id),
+answer_text varchar(100) not null,
+isRightAnswer boolean );
+
+insert into questions (question_text) values ('Какая из крупных нелетающих птиц родом из Австралии?');
+insert into questions (question_text) values ('Какой национальности человек, чьим родным языком является кантонский?');
+insert into questions (question_text) values ('В каком месте река впадает в море?');
+
+insert into answers (question_id, answer_text, isrightanswer) values (1, 'Киви', false);
+insert into answers (question_id, answer_text, isrightanswer) values (1, 'Страус', false);
+insert into answers (question_id, answer_text, isrightanswer) values (1, 'Эму', true);
+
+insert into answers (question_id, answer_text, isrightanswer) values (2, 'Перуанец', false);
+insert into answers (question_id, answer_text, isrightanswer) values (2, 'Китаец', true);
+insert into answers (question_id, answer_text, isrightanswer) values (2, 'Японец', false);
+
+insert into answers (question_id, answer_text, isrightanswer) values (3, 'Рукав', false);
+insert into answers (question_id, answer_text, isrightanswer) values (3, 'Устье', true);
+insert into answers (question_id, answer_text, isrightanswer) values (3, 'Русло', false);
+
+
+select *
+from questions;
+
+select *
+from answers;
