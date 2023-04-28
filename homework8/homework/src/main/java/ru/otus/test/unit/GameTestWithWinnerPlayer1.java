@@ -6,7 +6,7 @@ import ru.otus.game.GameWinnerPrinter;
 import ru.otus.game.Player;
 import ru.otus.test.Assertions;
 import ru.otus.test.unit.fakes.DiceWithWinnerPlayer1;
-import ru.otus.test.unit.fakes.GameWinnerPrinterFake;
+import ru.otus.test.unit.fakes.GameWinnerPrinterFakeWithFlow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,7 +21,7 @@ public class GameTestWithWinnerPlayer1 {
                     "Победитель: Вася");
             List<String> actualFlow = new ArrayList<>();
             Dice diceFake = new DiceWithWinnerPlayer1(actualFlow);
-            GameWinnerPrinter GameWinnerPrinterFake = new GameWinnerPrinterFake(actualFlow);
+            GameWinnerPrinter GameWinnerPrinterFake = new GameWinnerPrinterFakeWithFlow(actualFlow);
             Game game = new Game(diceFake, GameWinnerPrinterFake);
             game.playGame(new Player("Вася"), new Player("Игорь"));
 

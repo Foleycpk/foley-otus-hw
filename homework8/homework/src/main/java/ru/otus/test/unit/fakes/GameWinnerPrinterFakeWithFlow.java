@@ -5,9 +5,9 @@ import ru.otus.game.Player;
 
 import java.util.List;
 
-public class GameWinnerPrinterFake implements GameWinnerPrinter {
+public class GameWinnerPrinterFakeWithFlow implements GameWinnerPrinter {
     private final List<String> actualFlow;
-    public GameWinnerPrinterFake(List<String> actualFlow) {
+    public GameWinnerPrinterFakeWithFlow(List<String> actualFlow) {
         this.actualFlow = actualFlow;
     }
 
