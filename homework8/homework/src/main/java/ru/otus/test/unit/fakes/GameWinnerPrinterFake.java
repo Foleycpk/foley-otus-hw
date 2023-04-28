@@ -6,13 +6,13 @@ import ru.otus.game.Player;
 import java.util.List;
 
 public class GameWinnerPrinterFake implements GameWinnerPrinter {
-    private final List<String> actualFlow;
-    public GameWinnerPrinterFake(List<String> actualFlow) {
-        this.actualFlow = actualFlow;
+    private final List<String> realWinner;
+    public GameWinnerPrinterFake(List<String> realWinner) {
+        this.realWinner = realWinner;
     }
 
     @Override
     public void printWinner(Player winner) {
-        actualFlow.add(String.format("Победитель: %s", winner.getName()));
+        realWinner.add(winner.getName());
     }
 }

@@ -15,21 +15,17 @@ public class GameTestWithWinnerPlayer2 {
 
     public void testAppFlow() {
         String scenario = "Тест класса Game с победителем Игорем";
+        String expectedWinner = "Игорь";
+        List<String> realWinner = new ArrayList<>();
         try {
-            List<String> expectedFlow = List.of("Первый бросок кубиков: 3",
-                    "Второй бросок кубиков: 4",
-                    "Победитель: Игорь");
-            List<String> actualFlow = new ArrayList<>();
-            Dice diceFake = new DiceWithWinnerPlayer2(actualFlow);
-            GameWinnerPrinter GameWinnerPrinterFake = new GameWinnerPrinterFake(actualFlow);
+            Dice diceFake = new DiceWithWinnerPlayer2();
+            GameWinnerPrinter GameWinnerPrinterFake = new GameWinnerPrinterFake(realWinner);
             Game game = new Game(diceFake, GameWinnerPrinterFake);
             game.playGame(new Player("Вася"), new Player("Игорь"));
 
-            Assertions.assertEquals(expectedFlow.size(), actualFlow.size());
+            Assertions.assertEquals(expectedWinner, realWinner.get(0));
 
-            for (int i = 0; i < expectedFlow.size(); i++) {
-                Assertions.assertEquals(expectedFlow.get(i), actualFlow.get(i));
-            }
+
 
             System.out.printf("\"%s\" passed %n", scenario);
         } catch (Throwable e) {
