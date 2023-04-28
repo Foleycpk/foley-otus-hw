@@ -18,7 +18,6 @@ public class GameTestWithWinnerPlayer2 {
         String expectedWinner = "Игорь";
         List<String> realWinner = new ArrayList<>();
         try {
-            List<String> actualFlow = new ArrayList<>();
             Dice diceFake = new DiceWithWinnerPlayer2();
             GameWinnerPrinter GameWinnerPrinterFake = new GameWinnerPrinterFake(realWinner);
             Game game = new Game(diceFake, GameWinnerPrinterFake);
