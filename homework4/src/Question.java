@@ -5,9 +5,9 @@ public class Question {
     public Question(String text) {
         this.text = text;
     }
-        public void addAnswerVariants(AnswerVariant answerVariant, int numberOfVariant) {
-             answerVariants[numberOfVariant] = answerVariant;
-        }
+    public void addAnswerVariants(AnswerVariant answerVariant, int numberOfVariant) {
+        answerVariants[numberOfVariant] = answerVariant;
+    }
     public static void printQuestion(Question question){
         System.out.println(question.text);
         for (int i = 0; i < question.answerVariants.length; i++) {
@@ -20,9 +20,3 @@ public class Question {
     }
 
 }
-
-
-
-
-
-
